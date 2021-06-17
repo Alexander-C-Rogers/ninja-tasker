@@ -12,3 +12,13 @@ const app = express();
 //setting up view engine
 app.set("view engine", "ejs");
 
+//middleware
+app.use(express.static("./public"));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(
+    session({ secret: "Cohort orlando", resave: true, saveUninitialized: true })
+);
+app.use(passport.initialize());
+app.use(passport.session());
+
