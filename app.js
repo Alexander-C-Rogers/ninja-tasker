@@ -22,3 +22,13 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+// routing manager
+app.use(routes);
+
+db.sequelize.sync().then(function() {
+  //server listening for request
+  app.listen(3000, function(err) {
+      if (err) console.log(err);
+      console.log("sever is liT!!!!!");
+  });
+})
