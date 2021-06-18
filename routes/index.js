@@ -72,3 +72,10 @@ routes.get("/profile", authenticate, function(req, res) {
     res.render("profile.ejs", { user: req.user });
 });
   
+// GET logout
+routes.get("/logout", function(req, res) {
+    req.logout();
+    res.redirect("/home");
+});
+  
+module.exports = routes;
