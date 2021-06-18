@@ -30,3 +30,38 @@ passport.use(
   )
 );
 
+// strategy for creating a user in our db if he dosent already exist
+passport.use(
+  "local-signup",
+  new LocalStrategy(
+    {
+      usernameField: "email",
+      passReqToCallback: true
+    },
+    function(req, email, password, done) {
+      // when a user attempts to register
+      db.Users.findOne({ where: { email: email } }).then(function(dbUser) {
+        //   if there is a user tell them email already used
+        if (dbUser) {
+          return done(null, false, { message: "That email is already in use" });
+        } else {
+          // if there is no user create one
+          db.Users.create({
+            nickname: req.body.name,
+            email: email,
+            password: password
+          }).then(function(newUser) {
+            if (!newUser) {
+              return done(null, false);
+            }
+
+            if (!newUser) {
+              return done(null, newUser);
+            }
+          });
+        }
+      });
+    }
+  )
+);
+
