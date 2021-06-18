@@ -22,4 +22,12 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     }
   });
+
+  
+  // create custom methods for our our user model
+
+  // comparing password to hash password
+  User.prototype.verifyPassword = function(password) {
+    return bcrypt.compareSync(password, this.password);
+  };
 };
