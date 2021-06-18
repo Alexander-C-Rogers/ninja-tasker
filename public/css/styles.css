@@ -59,3 +59,24 @@ ul {
     text-decoration: line-through;
     cursor: pointer;
 }
+
+/*ID Selectors*/
+
+#container {
+    background: #0c1521;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px 0 50px;
+}
+  
+#logo {
+    background: url("./ninja-logo.png") no-repeat center;
+    height: 37px;
+}
+  
+#profile {
+    float: right;
+    margin-right: 7px;
+    margin-top: 4px;
+    color: white;
+}
