@@ -1,0 +1,13 @@
+/* base styles */
+
+/*Element Selectors*/
+body {
+    background-color: #04205a;
+}
+
+ul {
+    width: 55%;
+    margin: 50px auto;
+    padding: 0;
+    list-style: none;
+}
