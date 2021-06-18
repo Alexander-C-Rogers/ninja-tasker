@@ -14,3 +14,25 @@ routes.get("/home", authenticate, function(req, res) {
     res.render("home.ejs", { list: results, user: req.user });
   });
 });
+
+// POST /ninja
+routes.post("/ninja", function(req, res) {
+    // console.log(req.body.taskItem);
+    db.Tasks.create({
+      todo: req.body.taskItem,
+      userID: req.user.id
+    }).then(function(results) {
+    // console.log(results);
+      res.redirect("/home");
+    });
+});
+  
+routes.delete("/delete/:index", function(req, res) {
+    console.log(req.params.index);
+    db.Tasks.destroy({
+      where: { id: req.params.index }
+    }).then(function(results) {
+      // consle.log(results);
+      res.redirect("/home");
+    });
+});
