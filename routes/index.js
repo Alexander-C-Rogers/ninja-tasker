@@ -66,4 +66,9 @@ routes.post(
       failureRedirect: "/user/signup"
     })
 );
+
+// GET profile
+routes.get("/profile", authenticate, function(req, res) {
+    res.render("profile.ejs", { user: req.user });
+});
   
