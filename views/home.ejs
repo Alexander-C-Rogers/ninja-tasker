@@ -8,6 +8,24 @@
     <link rel="stylesheet" href="../public/css/styles.css">
 </head>
 <body>
-    
+    <a href="/profile" id="profile"><%= user.nickname %></a>
+    <div id="container">
+        <div id="logo"></div>
+        <form action="/ninja" method="POST">
+            <input
+                name="taskItem"
+                class="user-input"
+                type="text"
+                placeholder="task To complete"
+                required
+                />
+            <input class="user-button" type="submit" value="Add" />
+        </form>
+        <ul>
+            <% for(let index =0; index< list.length; index++ ) { %>
+            <li class="ninja-item" id=<%= list[index].id %> ><%= list[index].todo %></li>
+            <% } %>
+        </ul>
+    </div>
 </body>
 </html>
