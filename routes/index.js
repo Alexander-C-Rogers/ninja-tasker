@@ -58,3 +58,12 @@ routes.get("/user/signup", function(req, res) {
     res.render("registration.ejs");
 });
   
+// POST signup
+routes.post(
+    "/user/signup",
+    passport.authenticate("local-signup", {
+      sucsessRedirect: "/home",
+      failureRedirect: "/user/signup"
+    })
+);
+  
