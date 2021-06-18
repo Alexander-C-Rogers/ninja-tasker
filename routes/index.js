@@ -36,3 +36,10 @@ routes.delete("/delete/:index", function(req, res) {
       res.redirect("/home");
     });
 });
+
+// ROUTES: users
+  
+// GET login
+routes.get("/user/login", function(req, res) {
+    res.render("login.ejs");
+});
