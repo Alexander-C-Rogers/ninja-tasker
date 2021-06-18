@@ -30,4 +30,17 @@ module.exports = function(sequelize, DataTypes) {
   User.prototype.verifyPassword = function(password) {
     return bcrypt.compareSync(password, this.password);
   };
+
+  // hooks happen on sepcific scenarios
+
+  // enctypting users passwords
+  User.addHook("beforeCreate", function(user) {
+    user.password = bcrypt.hashSync(
+    user.password,
+    bcrypt.genSaltSync(10),
+    null
+    );
+  });
+
+  return User;
 };
