@@ -43,3 +43,12 @@ routes.delete("/delete/:index", function(req, res) {
 routes.get("/user/login", function(req, res) {
     res.render("login.ejs");
 });
+
+// POST login
+routes.post(
+    "/user/login",
+    passport.authenticate("local", {
+      sucsessRedirect: "/home",
+      failureRedirect: "/user/login"
+    })
+);
