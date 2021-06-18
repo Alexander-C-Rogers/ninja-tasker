@@ -80,3 +80,25 @@ ul {
     margin-top: 4px;
     color: white;
 }
+
+/* styles for desktop */
+@media only screen and (min-width: 900px) {
+    .user-button {
+      padding: 6px 22px;
+      margin-left: -90px;
+    }
+  
+    .user-input {
+      width: 60%;
+      padding: 12px 20px;
+    }
+  
+    ul {
+      width: 25%;
+    }
+  
+    .ninja-item {
+      padding: 1px 10px;
+      margin: 25px auto;
+    }
+}
