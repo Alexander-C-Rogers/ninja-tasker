@@ -11,3 +11,51 @@ ul {
     padding: 0;
     list-style: none;
 }
+
+/*Class Selectors*/
+.user-input {
+    text-align: center;
+    width: 80%;
+    padding: 10px 15px;
+    font-size: 20px;
+    font-weight: 300;
+    color: #d2abab;
+    border: 0;
+    outline: none;
+    background-color: #04205a;
+    border-top: 1px solid white;
+    transition: all 0.2s ease-in;
+}
+  
+.user-input:focus {
+    border-bottom: 2px solid #515151;
+}
+  
+.user-button {
+    text-align: center;
+    padding: 3px 18px;
+    color: #ef211f;
+    font-size: 20px;
+    outline: none;
+    font-weight: 300;
+    background-color: black;
+    margin-left: -80px;
+}
+  
+.user-button:hover {
+    border: 2px solid #515151;
+}
+  
+.ninja-item {
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 15px;
+    color: #dde2e4;
+    border-bottom: 1px solid;
+    margin: 30px auto;
+}
+  
+.ninja-item:hover {
+    text-decoration: line-through;
+    cursor: pointer;
+}
