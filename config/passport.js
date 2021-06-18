@@ -65,3 +65,12 @@ passport.use(
   )
 );
 
+// encrypting users to sessions and out of sessions
+passport.serializeUser(function(user, done) {
+    done(null, user);
+});
+  
+passport.deserializeUser(function(id, done) {
+    done(null, user);
+});
+  
