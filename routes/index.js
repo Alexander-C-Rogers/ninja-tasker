@@ -52,3 +52,9 @@ routes.post(
       failureRedirect: "/user/login"
     })
 );
+  
+// GET signup
+routes.get("/user/signup", function(req, res) {
+    res.render("registration.ejs");
+});
+  
